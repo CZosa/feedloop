@@ -9,4 +9,10 @@ module.exports = (app) => {
   // 2. user has signed in* this route already has the "code=4" sent to server
   // 3. Then generates access token. This will save user to database
   app.get('/auth/google/callback', passport.authenticate('google'));
+
+  // tests to make sure that someone who has already gone thru oauth flow
+  // and all logged in can now get access 
+  app.get('/api/current_user', (req, res) => {
+    res.send(req.user);
+  });
 };
