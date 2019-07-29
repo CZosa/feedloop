@@ -10,8 +10,13 @@ module.exports = (app) => {
   // 3. Then generates access token. This will save user to database
   app.get('/auth/google/callback', passport.authenticate('google'));
 
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+
   // tests to make sure that someone who has already gone thru oauth flow
-  // and all logged in can now get access 
+  // and all logged in can now get access. 
   app.get('/api/current_user', (req, res) => {
     res.send(req.user);
   });
