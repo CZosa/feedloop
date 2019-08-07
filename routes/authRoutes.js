@@ -8,11 +8,17 @@ module.exports = (app) => {
   
   // 2. user has signed in* this route already has the "code=4" sent to server
   // 3. Then generates access token. This will save user to database
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback', 
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    }
+  );
 
   app.get('/api/logout', (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect('/');
   });
 
   // tests to make sure that someone who has already gone thru oauth flow
