@@ -7,7 +7,8 @@ const { Schema } = mongoose;
 
 //Model Instance
 const userSchema = new Schema ({
-  googleId: String
+  googleId: String,
+  credits: { type: Number, default: 0 }
 });
 
 //Model Class - users collection
