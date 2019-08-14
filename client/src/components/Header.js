@@ -30,10 +30,11 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className="purple nav-wrapper">
           <Link 
             to={this.props.auth ? '/surveys' : '/'} 
             className="left brand-logo"
+            style={{ marginLeft: '20px' }}
           >
             ESurvey
           </Link>

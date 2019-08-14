@@ -21,12 +21,12 @@ class SurveyList extends React.Component {
             </p>
           </div>
           <div className="card-action">
-            <a>Yes: {survey.yes}</a>
-            <a>No: {survey.no}</a>
+            <button>Yes: {survey.yes}</button>
+            <button>No: {survey.no}</button>
           </div>
         </div>
       );
-    })
+    });
   }
 
   render() {
@@ -38,7 +38,6 @@ class SurveyList extends React.Component {
   }
 }
 
-//state.surveys from reducers/index.js
 function mapStateToProps(state) {
   return { surveys: state.surveys }
 }
