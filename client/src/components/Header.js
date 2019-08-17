@@ -36,7 +36,7 @@ class Header extends React.Component {
             className="left brand-logo"
             style={{ marginLeft: '20px' }}
           >
-            ESurvey
+            FeedLoop
           </Link>
           <ul className="right">
             {this.renderContent()}
