@@ -15,17 +15,16 @@ class App extends React.Component {
 
   render() {
     return (
-        <BrowserRouter>
-          <div className="container" >
-            <Header />
-            <Route path="/" exact component={Landing} />
-            <Route path="/surveys" exact component={Dashboard}/>
-            <Route path="/surveys/new" exact component={SurveyNew}/>
-          </div>
-        </BrowserRouter>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Route path="/" exact component={Landing}/>
+          <Route path="/surveys" exact component={Dashboard}/>
+          <Route path="/surveys/new" exact component={SurveyNew}/>
+        </div>
+      </BrowserRouter>
     );
   }
 }
 
-//connect allows you to call action creator from the component
 export default connect(null, actions)(App);
